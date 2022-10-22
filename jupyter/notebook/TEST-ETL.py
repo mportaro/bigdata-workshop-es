@@ -145,7 +145,8 @@ stocks_moving_avg_df \
     .option("user", "workshop") \
     .option("password", "w0rkzh0p") \
     .option("driver", "org.postgresql.Driver") \
-    .mode('append') \
+    .mode('overwrite') \
     .save()
+# cambié mode('append') por mode('overwrite') en la linea 148 para que no salte error.
 
 spark.stop()
