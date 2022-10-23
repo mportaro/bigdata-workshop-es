@@ -3,6 +3,8 @@ import findspark
 findspark.add_jars('/app/postgresql-42.1.4.jar')
 findspark.init()
 
+import pyspark.sql.types as t
+
 from pyspark.sql import SparkSession
 spark = (
     SparkSession.builder
