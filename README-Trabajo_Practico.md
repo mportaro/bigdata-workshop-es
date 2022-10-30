@@ -1,6 +1,6 @@
-# Seminario Intensivo de Tópicos Avanzados en Datos Complejos
+## Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 
-## Trabajo Práctico
+# Trabajo Práctico
 
 ## Contenidos
 * [Introducción al proyecto](#Introducción-al-proyecto)
