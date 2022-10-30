@@ -34,7 +34,7 @@ Los registros (o filas) corresponden a cada cliente que actualmente es, o en su 
 
 La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
 
-Importante notar que el churn de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desabalanceada.
+Importante notar que el churn de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.
 
 ## ETFL
 * **Extracción de los datos:** como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. El intensión original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
