@@ -1,4 +1,4 @@
-# Se pretende desarrollar un modelo que ayude a entender las razones del churn de los clientes de los servicios de un banco.
+# El objetivo es desarrollar un modelo que ayude a entender las razones del churn de los clientes de los servicios de un banco.
 
 import findspark
 
