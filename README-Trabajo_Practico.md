@@ -26,7 +26,7 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 ## Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
 
-El dataset en formato csv ha utilizar contiene 10,127 registros y 22 columnas respecto al churn de clientes de un banco El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
+El dataset en formato csv ha utilizar contiene 10,127 registros y 22 columnas respecto al churn de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
 Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue cliente del banco. Las columnas se dividen en dos grandes grupos:
 
 * Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
