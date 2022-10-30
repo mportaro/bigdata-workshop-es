@@ -30,10 +30,10 @@ El dataset ha utilizar contiene 10,127 registros y 22 columnas respecto al churn
 Los registros (o filas) corresponden a cada cliente que es actualmente, o fue cliente del banco.
 Las columnas se dividen en dos grandes grupos:
 
-*Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
-*Datos transaccionales o especificos del banco: antigüedad, tipo de tarjeta de crédito, meses sin actividad, limite de crédito, balance de la cuenta, 
-cantidad y monto de transacciones en el año, variación de la cantidad y monto de transacciones en de Q4 a Q1, grado de utilización de la tarjeta de crédito.
-*La últimas dos columnas de eliminan por recomendación al no ser de utilidad para el análisis.
+* Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
+* Datos transaccionales o especificos del banco: antigüedad, tipo de tarjeta de crédito, meses sin actividad, limite de crédito, balance de la cuenta, 
+cantidad y monto de transacciones en el año, variación de la cantidad y monto de transacciones en de Q4 a Q1, grado de utilización de la tarjeta de crédito. 
+* La últimas dos columnas de eliminan por recomendación al no ser de utilidad para el análisis.
 
 
 ## ETFL
