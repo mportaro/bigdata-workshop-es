@@ -26,19 +26,23 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 ## Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
 
-El dataset ha utilizar contiene 10,127 registros y 22 columnas respecto al churn de clientes de un banco El proposito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
-Los registros (o filas) corresponden a cada cliente que es actualmente, o fue cliente del banco.
-Las columnas se dividen en dos grandes grupos:
+El dataset en formato csv ha utilizar contiene 10,127 registros y 22 columnas respecto al churn de clientes de un banco El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
+Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue cliente del banco. Las columnas se dividen en dos grandes grupos:
 
 * Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
-* Datos transaccionales o especificos del banco: antigüedad, tipo de tarjeta de crédito, meses sin actividad, limite de crédito, balance de la cuenta, 
-cantidad y monto de transacciones en el año, variación de la cantidad y monto de transacciones en de Q4 a Q1, grado de utilización de la tarjeta de crédito. 
-* La últimas dos columnas de eliminan por recomendación al no ser de utilidad para el análisis.
+* Datos transaccionales o especificos del banco: antigüedad del cliente, tipo de tarjeta de crédito, meses sin actividad, limite de crédito, balance de la cuenta, cantidad y monto de transacciones en el año, variación de la cantidad y el monto de las transacciones en el período Q4-Q1, grado de utilización de la tarjeta de crédito. 
 
+La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
+
+Importante notar que el churn de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desabalanceada.
 
 ## ETFL
-Correr el código Python
+* **Extracción de los datos:** como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. El intensión original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
+* **Transformación:**
 
+* **Fit:**
+
+*  **Load:**
 
 
 
