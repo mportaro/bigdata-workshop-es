@@ -1,4 +1,4 @@
-## Seminario Intensivo de Tópicos Avanzados en Datos Complejos
+Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 
 # Trabajo Práctico
 
