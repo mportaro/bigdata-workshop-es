@@ -12,20 +12,28 @@ Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 
 
 ## Introducción al proyecto
-Para integrar el material que se ha cubierto durante el seminario, en este trabajo práctico haremos un proceso de ETFL (Extract Transform Fit Load) de un dataset público. Aunque el dataset es relativamente liviano (10,000 registros con 20 variables) el proceso de ETFL va a ser realizado en un entorno distribuidopara así complementar y reforzar los conocimientos adquiridos en la materia previa de grandes volúmenes de datos. Esto no solo es fundamental para entender el proceso subyacente de estos ambientes de *Big Data*, sino además es una buena oportunidad para incursionar en la sintáxis de `PySpark`.
+Para integrar el material que se ha cubierto durante el seminario, en este trabajo práctico haremos un proceso de ETFL (Extract Transform Fit Load) de un dataset público. Aunque el dataset es relativamente liviano (10,000 registros con 20 variables aproximadamente) el proceso de ETFL va a ser realizado en un entorno distribuidopara así complementar y reforzar los conocimientos adquiridos en la materia previa de grandes volúmenes de datos. Esto no solo es fundamental para entender el proceso subyacente de estos ambientes de *Big Data*, sino además es una buena oportunidad para incursionar en la sintáxis de `PySpark`.
 
 Los datos trabajados va a ser luego cargados en una base de datos `Postgres` para finalmente ser levantados en `Superset` para su posterior análisis mediante gráficos y dashboards. Para todo esto utilizaremos `Docker` para conteinizar cada aplicación, aprovechando la ventaja de portabilidad que lo hace asi independiente del sistema operativo de quienes lo ejecuten y todo el proceso pueda así correr sin problemas en cualquier plataforma o incluso en Cloud.
 
 Vale la pena notar que la data a procesar es ingestada una única vez, ya que los datos son estáticos. Por lo que no habia una clara ventaja en utilizar Airflow. También se planteó si tenia sentido correr el script de PySpark de manera automática, es decir, crear un proceso que dispare Python que corra el script en su container correspondiente. Pero en una segunda impresión esto no parecía algo muy práctico por ser una tarea trivial al ser una única tarea. Quizás sería más práctico y eficiente que el script se disparase automáticamente tan pronto se levantara el container.
 
-## Dataset
-El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
-
-
 
 ## Levantar el ambiente
 
 
+
+## Dataset
+El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
+
+El dataset ha utilizar contiene 10,127 registros y 22 columnas respecto al churn de clientes de un banco El proposito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
+Los registros (o filas) corresponden a cada cliente que es actualmente, o fue cliente del banco.
+Las columnas se dividen en dos grandes grupos:
+
+*Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
+*Datos transaccionales o especificos del banco: antigüedad, tipo de tarjeta de crédito, meses sin actividad, limite de crédito, balance de la cuenta, 
+cantidad y monto de transacciones en el año, variación de la cantidad y monto de transacciones en de Q4 a Q1, grado de utilización de la tarjeta de crédito.
+*La últimas dos columnas de eliminan por recomendación al no ser de utilidad para el análisis.
 
 
 ## ETFL
