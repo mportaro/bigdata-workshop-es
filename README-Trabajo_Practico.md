@@ -19,7 +19,7 @@ Los datos trabajados va a ser luego cargados en una base de datos `Postgres` par
 Vale la pena notar que la data a procesar es ingestada una única vez, ya que los datos son estáticos. Por lo que no habia una clara ventaja en utilizar Airflow. También se planteó si tenia sentido correr el script de PySpark de manera automática, es decir, crear un proceso que dispare Python que corra el script en su container correspondiente. Pero en una segunda impresión esto no parecía algo muy práctico por ser una tarea trivial al ser una única tarea. Quizás sería más práctico y eficiente que el script se disparase automáticamente tan pronto se levantara el container.
 
 ## Dataset
-El ejercicio de ETFL se basará en un [dataset(https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma Kaggle [Kaggle](Kaggle.com).
+El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
 
 
 
