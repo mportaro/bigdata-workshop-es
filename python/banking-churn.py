@@ -233,7 +233,11 @@ print("MÉTRICAS DE EVALUACIÓN")
 print("---------------------- \n")
 
 pred_ds = lrm.transform(test_data)
+
 print(f"Canitdad de iteraciones                         {lrm.summary.totalIterations}\n")
+print(f"Etiquetas/Labels                                {lrm.summary.labels}")
+print(f"Precisión                                       {lrm.summary.precisionByLabel}")
+print(f"Cobertura                                       {lrm.summary.recallByLabel}\n")
 print(f"Accuracy                                        {lrm.summary.accuracy:.1%}")
 print(f"Área debajo de la curva ROC                     {lrm.summary.areaUnderROC:.1%}\n")
 

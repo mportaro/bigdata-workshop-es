@@ -35,9 +35,9 @@ Los registros (o filas) corresponden a cada cliente que actualmente es, o en su 
 Importante notar que el churn de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.
 
 ## ETFL
-1. **Extracción de los datos:**  Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
+1. **Extracción de los datos -** Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
 
-2. **Transformación:**  Para la limpieza del dataset realizamos las siguientes operaciones:
+2. **Transformación -** Para la limpieza del dataset realizamos las siguientes operaciones:
     * Se deja que PySpark infiera el esquema de los datos meiante InferSchema y se corrobora que fueron correctamente casteados.
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
     * Vemos la proporción de Nulls y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de featuros **numéricos** completamos los Nulls con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que mas se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya seria un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
@@ -45,20 +45,27 @@ Importante notar que el churn de los clientes es de aproximadamente un 16%, por 
     * Se grafican mediante la libreria de `matplotlib` todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco features con distribución asimétrica, por lo que se decidió aplicar una transformación logarítmica para normalizarlas.
     * Se agrega una columna de training que luego se usará en el fitteo del modelo. La relación es 80% training y 20% testing.
 
-3. **Fit:**
-Para predecir el label *Attrition* (i.e.: *churn*) en este ejercicio se usará un modelo parámetrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que es más fácil de interpretar.
+3. **Fit -** Para predecir el label *Attrition* (i.e.: *churn*) en este ejercicio se usará un modelo parámetrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que es más fácil de interpretar.
 
 Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya que el modelo tiene que recibir variables continuas para un funcionamiento correcto.
 
+Las métricas resultantes para evaluar el desempeño del modelo dan una Precisión del 79.3% y una Cobertura del 64.5% para el Label correspondiente a Attrition. El Accuracy, en cambio, es de 91.4%. Y el evaluador arroja un desepeño del 93.1%.
+
 Un punto a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) es de solo un 16% del total de registros.
 
-4. **Load:**
-
-
+4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) lo persistimos en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
 
 ## Ver base de datos en Superset
+Como se comentó mas arriba, las datos se han persistido en una BD en `Postgres`. Si accedemos al Container correspondiente 
 
-
+```bash
+docker exec -it postgres bash
+```
+y corremos el siguiente comando vamos a poder ver la tabla que se creó.
+```Postgres
+psql -U workshop workshop
+workshop=# \d
+```
 
 
 
