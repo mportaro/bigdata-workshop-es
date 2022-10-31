@@ -70,10 +70,10 @@ Obteniendo así la tabla **churn**.
 
 ![](./images/postgres_table.png)
 
-Desde aqui mismo podriamos correr una query en Postgres para ver el contenido de la tabla. Veamos algunas columnas:
+Desde aquí mismo podríamos correr una query para ver el contenido de la tabla. Veamos algunas columnas:
 
 ``` postgres
-workshop=# SELECT "CLIENTNUM","Customer_Age", "Gender" FROM churn limit 5;
+workshop=# SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age", "Gender" FROM churn limit 5;
 ```
 ![](./images/postgres_table_2.png)
 
