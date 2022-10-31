@@ -21,7 +21,11 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 
 ## Levantar el ambiente
 
-
+Nombre de la base de datos: workshop
+USER ID: workshop
+Password: w0rkzh0p
+Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop`
+Nombre de la tabla: churn
 
 ## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
