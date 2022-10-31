@@ -35,21 +35,21 @@ Los registros (o filas) corresponden a cada cliente que actualmente es, o en su 
 Importante notar que el churn de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.
 
 ## ETFL
-* **Extracción de los datos:** como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
+1. **Extracción de los datos:** como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
 
-* **Transformación:**
+2. **Transformación:**
 Para la limpieza del dataset realizamos las siguientes operaciones:
-1. Se deja que PySpark infiera el esquema de los datos meiante InferSchema y se corrobora que fueron correctamente casteados.
-2. La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
-3. Vemos la proporción de Nulls y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de featuros **numéricos** completamos los Nulls con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que mas se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya seria un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
-4. Se analizan todos las columnas numéricas para ver sus respectivas desviaciones starndards (<0.015) para eliminarlas en caso que así fuera por no agregar valor. Pero no hubo ningún caso.
-5. Se grafican mediante la libreria de matplotlib todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco features con sesgados hacia la izquiera, por lo que se decidió aplicar una transformación logarítmica para normalizarlas. 
+* Se deja que PySpark infiera el esquema de los datos meiante InferSchema y se corrobora que fueron correctamente casteados.
+* La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
+* Vemos la proporción de Nulls y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de featuros **numéricos** completamos los Nulls con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que mas se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya seria un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
+* Se analizan todos las columnas numéricas para ver sus respectivas desviaciones starndards (<0.015) para eliminarlas en caso que así fuera por no agregar valor. Pero no hubo ningún caso.
+* Se grafican mediante la libreria de matplotlib todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco features con sesgados hacia la izquiera, por lo que se decidió aplicar una transformación logarítmica para normalizarlas. 
 
-* **Fit:**
+3. **Fit:**
 Para predecir el label Attrition (i.e.: churn) en este ejercicio se usará un modelo parámetrico de regresión logistica, ya que se trata de un problema de clasificación binaria al tratarse de entender si el cliente se va a quedar o a irse. En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que son mas fáciles de interpretar.
 
 
-* **Load:**
+4. **Load:**
 
 
 
