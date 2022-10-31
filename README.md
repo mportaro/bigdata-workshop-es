@@ -69,7 +69,7 @@ workshop=# \d
 Obteniendo
 
 
-![](./images/docker-advanced-config.jpg)
+![](./images/postgres_table.png)
 
 
 
