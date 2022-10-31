@@ -56,7 +56,7 @@ Un punto a tener en cuenta para un próximo análisis es que el modelo en este c
 4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) lo persistimos en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
 
 ## Ver base de datos en Superset
-Como se comentó mas arriba, las datos se han persistido en una BD en `Postgres`. Si accedemos al Container correspondiente 
+Como se comentó mas arriba, las datos se han persistido en una BD en `Postgres`. Si accedemos al Container correspondiente via
 
 ```bash
 docker exec -it postgres bash
@@ -66,7 +66,8 @@ y corremos el siguiente comando vamos a poder ver la tabla que se creó.
 psql -U workshop workshop
 workshop=# \d
 ```
-
+Obteniendo
+(/home/mportaro/marcos/bigdata-workshop-es/images/Postgres_table_.png)
 
 
 ## Conclusiones
