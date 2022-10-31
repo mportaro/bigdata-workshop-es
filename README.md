@@ -51,7 +51,7 @@ Para predecir el label *Attrition* (i.e.: churn) en este ejercicio se usará un 
 
 Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya que el modelo tiene que recibir variables continuas para un funcionamiento correcto.
 
-Una cosa a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También es importante poder compensar el desbalance del dataset ya que la clase minoritaria (clientes con attrition) es de solo un 16% del total de registros.
+Una cosa a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) es de solo un 16% del total de registros.
 
 4. **Load:**
 
