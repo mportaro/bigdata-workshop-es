@@ -23,7 +23,7 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 
 
 
-## Dataset
+## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
 
 El dataset en formato csv ha utilizar contiene 10,127 registros y 22 columnas respecto al churn de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
@@ -43,11 +43,15 @@ Para la limpieza del dataset realizamos las siguientes operaciones:
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
     * Vemos la proporción de Nulls y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de featuros **numéricos** completamos los Nulls con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que mas se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya seria un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
     * Se analizan todos las columnas numéricas para ver sus respectivas desviaciones starndards (<0.015) para eliminarlas en caso que así fuera por no agregar valor. Pero no hubo ningún caso.
-    * Se grafican mediante la libreria de `matplotlib` todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco features con sesgados hacia la izquiera, por lo que se decidió aplicar una transformación logarítmica para normalizarlas. 
+    * Se grafican mediante la libreria de `matplotlib` todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco features con distribución asimétrica, por lo que se decidió aplicar una transformación logarítmica para normalizarlas.
+    * Se agrega una columna de training que luego se usará en el fitteo del modelo. La relación es 80% training y 20% testing.
 
 3. **Fit:**
-Para predecir el label Attrition (i.e.: churn) en este ejercicio se usará un modelo parámetrico de regresión logistica, ya que se trata de un problema de clasificación binaria al tratarse de entender si el cliente se va a quedar o a irse. En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que son mas fáciles de interpretar.
+Para predecir el label *Attrition* (i.e.: churn) en este ejercicio se usará un modelo parámetrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que es más fácil de interpretar.
 
+Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya que el modelo tiene que recibir variables continuas para un funcionamiento correcto.
+
+Una cosa a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También es importante poder compensar el desbalance del dataset ya que la clase minoritaria (clientes con attrition) es de solo un 16% del total de registros.
 
 4. **Load:**
 
