@@ -79,16 +79,29 @@ workshop=# SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age"
 
 Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**.
 
-Creamos un dashboard donde vamos agregando distintos gráficos: pie chart, tabla, tree-map y un histograma.
-
-
-![](./images/attrition-por-nivel-de-estudio-2022-10-31T22-10-27.059Z.jpg)
+Creamos un dashboard donde vamos agregando distintos gráficos a analizar: pie charts, una tabla, un tree-map y un histograma. Veamos unos ejemplos:
 
 ![](./images/nivel-de-educacion-2022-10-31T22-10-41.763Z.jpg)
+Fig 1 - Nivel de Educación
+
+Clientes con el Secundario o la Universidad completado forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o que no se tiene información.
+
+
 
 ![](./images/nivel-de-educacion-por-sexo-2022-10-31T22-10-22.250Z.jpg)
+Fig 2 - Nivel de Educación vs Sexo
+
+Este tree-map nos muestra que no hay una clara diferencia en la cantidad entre hombres y mujeres respecto de sus niveles de estudio.
+
+
+![](./images/nivel-de-ingreso-por-edad-2022-10-31T22-57-23.155Z.jpg)
+Fig 3 - Histograma Edad vs Estado Civil
+
+Este histograma deja en claro que hay una gran proporcion de solteros a la largo de todas las edades, no solo con los más jóvenes, siendo el segmento 45-55 años la más significativa. La proporción de casados mas alla de los 55 años baja dramáticamente.
 
 ![](./images/nivel-de-ingreso-por-edad-2022-10-31T22-10-32.630Z.jpg)
+Fig 4 - Tabla Attition vs Nivel de Estudio
+
 
 
 
