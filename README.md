@@ -84,24 +84,32 @@ Creamos un dashboard donde vamos agregando distintos gráficos a analizar: pie c
 En la Fig.1 vemos que los clientes con el Secundario o la Universidad completado forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o que no se tiene información.
 
 ![](./images/nivel-de-educacion-2022-10-31T22-10-41.763Z.jpg)
+
 Fig 1 - Nivel de Educación
+
 
 
 En la próxima figura apreciamos que **no hay** una clara diferencia proporcional entre la cantidad entre hombres y la de mujeres respecto de sus niveles de estudio.
 
+
 ![](./images/nivel-de-educacion-por-sexo-2022-10-31T22-10-22.250Z.jpg)
+
 Fig 2 - Nivel de Educación vs Sexo
+
 
 
 El histograma a continuación deja en claro que hay una gran proporción de solteros a la largo de todas las edades, no solo con los más jóvenes, siendo el segmento 45-55 años el más significativo. Curiosamente la proporción de casados más allá de los 55 años baja dramáticamente.
 
 ![](./images/nivel-de-ingreso-por-edad-2022-10-31T22-57-23.155Z.jpg)
+
 Fig 3 - Histograma Edad vs Estado Civil
+
 
 
 Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco en mayor proporción son los graduados de la universidad, casi en un 5%, recién seguidos por los que tienen estudios secundarios completos. Tener en cuenta que hay un 2.5% de *Unknown*, así que aquí habria que indagar un poco más.
 
 ![](./images/attrition-por-nivel-de-estudio-2022-10-31T22-10-27.059Z.jpg)
+
 Fig 4 - Tabla Attrition vs Nivel de Estudio
 
 ## Conclusiones
