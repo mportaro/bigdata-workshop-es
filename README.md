@@ -81,8 +81,6 @@ workshop=# SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age"
 
 
 
-
-
 ## Conclusiones
 
 
