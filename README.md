@@ -37,7 +37,7 @@ Importante notar que el churn de los clientes es de aproximadamente un 16%, por 
 ## ETFL
 1. **Extracción de los datos:** como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
 
-2. **Transformación:**
+2. **Transformación**
 Para la limpieza del dataset realizamos las siguientes operaciones:
     * Se deja que PySpark infiera el esquema de los datos meiante InferSchema y se corrobora que fueron correctamente casteados.
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
@@ -47,11 +47,11 @@ Para la limpieza del dataset realizamos las siguientes operaciones:
     * Se agrega una columna de training que luego se usará en el fitteo del modelo. La relación es 80% training y 20% testing.
 
 3. **Fit:**
-Para predecir el label *Attrition* (i.e.: churn) en este ejercicio se usará un modelo parámetrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que es más fácil de interpretar.
+Para predecir el label *Attrition* (i.e.: *churn*) en este ejercicio se usará un modelo parámetrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que es más fácil de interpretar.
 
 Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya que el modelo tiene que recibir variables continuas para un funcionamiento correcto.
 
-Una cosa a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) es de solo un 16% del total de registros.
+Un punto a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) es de solo un 16% del total de registros.
 
 4. **Load:**
 
