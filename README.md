@@ -69,7 +69,7 @@ workshop=# \d
 Obteniendo
 
 
-![](bigdata-workshop-es/images/Postgres_table_.png)
+![](./images/docker-advanced-config.jpg)
 
 
 
