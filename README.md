@@ -77,6 +77,20 @@ workshop=# SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age"
 ```
 ![](./images/postgres_table_2.png)
 
+Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**.
+
+Creamos un dashboard donde vamos agregando distintos gráficos: pie chart, tabla, tree-map y un histograma.
+
+
+![](./images/attrition-por-nivel-de-estudio-2022-10-31T22-10-27.059Z.jpg)
+
+![](./images/nivel-de-educacion-2022-10-31T22-10-41.763Z.jpg)
+
+![](./images/nivel-de-educacion-por-sexo-2022-10-31T22-10-22.250Z.jpg)
+
+![](./images/nivel-de-ingreso-por-edad-2022-10-31T22-10-32.630Z.jpg)
+
+
 
 
 
