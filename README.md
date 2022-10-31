@@ -35,13 +35,9 @@ Los registros (o filas) corresponden a cada cliente que actualmente es, o en su 
 Importante notar que el churn de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.
 
 ## ETFL
-1. **Extracción de los datos:** 
+1. **Extracción de los datos:**  Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
 
-como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
-
-2. **Transformación**
-
-Para la limpieza del dataset realizamos las siguientes operaciones:
+2. **Transformación:**  Para la limpieza del dataset realizamos las siguientes operaciones:
     * Se deja que PySpark infiera el esquema de los datos meiante InferSchema y se corrobora que fueron correctamente casteados.
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
     * Vemos la proporción de Nulls y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de featuros **numéricos** completamos los Nulls con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que mas se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya seria un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
