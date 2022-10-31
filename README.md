@@ -67,7 +67,7 @@ psql -U workshop workshop
 workshop=# \d
 ```
 Obteniendo
-[](/home/mportaro/marcos/bigdata-workshop-es/images/Postgres_table_.png)
+![](/home/mportaro/marcos/bigdata-workshop-es/images/Postgres_table_.png)
 
 
 ## Conclusiones
