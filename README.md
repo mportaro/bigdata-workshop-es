@@ -20,11 +20,7 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 
 ## Levantar el ambiente
 
-Nombre de la base de datos: workshop
-USER ID: workshop
-Password: w0rkzh0p
-Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop`
-Nombre de la tabla: churn
+
 
 ## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
@@ -84,6 +80,17 @@ workshop=# SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age"
 ![](./images/postgres_table_2.png)
 
 Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**.
+
+http://localhost:8088/
+
+![](./images/localhost8088.png)
+
+
+Nombre de la base de datos: workshop
+USER ID: workshop
+Password: w0rkzh0p
+Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop`
+Nombre de la tabla: churn
 
 Creamos un dashboard donde vamos agregando distintos gráficos a analizar: pie charts, una tabla, un tree-map y un histograma. Veamos unos ejemplos:
 
