@@ -77,14 +77,12 @@ Desde aquí mismo podríamos correr una query para ver el contenido de la tabla.
 ``` postgres
 workshop=# SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age", "Gender" FROM churn limit 5;
 ```
-![](./images/postgres_table_2.png)
+![](./images/postgres_table_2.png)  
 
-Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**.
-
-http://localhost:8088/
-
+Accedemos a Superset desde http://localhost:8088/  
 ![](./images/localhost8088.png)
 
+Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**.  
 
 Nombre BD: `workshop`  
 USER ID: `workshop`  
@@ -95,9 +93,10 @@ Nombre de la tabla: `churn`
 ![](./images/churn_superset.png)  
 
 Creamos un dashboard donde vamos agregando distintos gráficos a analizar.  
+
 ![](./images/dashboard.png)  
 
-Veamos unos ejemplos:
+Veamos unos ejemplos de los gráficos incluidos aquí:
 
 En la Fig.1 vemos que los clientes con el Secundario o la Universidad completado forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o que no se tiene información.
 
