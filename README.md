@@ -82,9 +82,7 @@ workshop=# SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age"
 Accedemos a Superset desde http://localhost:8088/  
 ![](./images/localhost8088.png)
 
-Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**.  
-
-Usamos las siguientes credenciales:  
+Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**. Usamos las siguientes credenciales:  
 
 Nombre BD: `workshop`  
 User ID: `workshop`  
