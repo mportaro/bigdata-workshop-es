@@ -52,9 +52,7 @@ Los contenedores están activos. A continuación veremos como correr el script d
   
 
 ## Comprensión del Dataset
-El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
-
-Importante notar que la idea original era que el mismo script de python accediera al archivo csv en Kaggle y luego se *cacheara* localmente. Pero el link de kaggle no permite llegar directamente via url al archivo .csv desde el código. Por lo tanto, el dataset se salvó localmente y quedó en el repositorio de donde accederá el script. **De todos modos**, se dejó mencionado entre las lineas 42-55 el código que se hubiera utilizado de haberlo podido hacer.  
+El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").  
 
 El dataset en formato csv a utilizar contiene 10,127 registros y 22 columnas respecto al *churn* de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
 Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue, cliente del banco. Las columnas se dividen en dos grandes grupos:
@@ -80,17 +78,17 @@ python3 banking-churn.py
 A continuación veremos que es lo que hace el script de python.
 
 ## ETFL
-1. **Extracción de los datos -** Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
+1. **Extracción de los datos -** Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo (lineas# 42-55).  
 
 2. **Transformación -** Para la limpieza del dataset realizamos las siguientes operaciones:
     * Se deja que PySpark infiera el esquema de los datos mediante *InferSchema* y se corrobora que fueron correctamente casteados.
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
-    * Vemos la proporción de *Nulls* y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de *features* **numéricos** completamos los *Nulls* con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que más se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya seráa un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
+    * Vemos la proporción de *Nulls* y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de *features* **numéricos** completamos los *Nulls* con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que más se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya sería un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
     * Se analizan todos las columnas numéricas para ver sus respectivas desviaciones standards (<0.015) para eliminarlas en caso que así fuera por no agregar valor. Pero no hubo ningún caso.
     * Se grafican mediante la libreria de `matplotlib` todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco *features* con distribución asimétrica, por lo que se decidió aplicar una transformación logarítmica para normalizarlas.
     * Se agrega una columna de training que luego se usará en el *fitteo* del modelo. La relación es 80% training y 20% testing.
 
-3. **Fit -** Para predecir el label *Attrition* (i.e.: *churn*) en este ejercicio se usará un modelo parámetrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin overfitting es ideal ya que es más fácil de interpretar. Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya que el modelador tiene que recibir variables continuas para un funcionamiento correcto.
+3. **Fit -** Para predecir el label *Attrition* (i.e.: *churn*) en este ejercicio se usará un modelo paramétrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin *overfitting* es ideal ya que es más fácil de interpretar. Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya que el modelador tiene que recibir variables continuas para un funcionamiento correcto.
 
 Las métricas resultantes para evaluar el desempeño del modelo dan una Precisión del 79.3% y una Cobertura del 64.5% para el Label correspondiente a Attrition. El Accuracy, en cambio, es del 91.4%. Y el Evaluador arroja un desepeño del 93.1%.
 
@@ -99,7 +97,7 @@ Las métricas resultantes para evaluar el desempeño del modelo dan una Precisi�
 
 Un punto a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) representa solo un 16% sobre el total de registros.
 
-4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) lo persistimos en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
+4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) se los persiste en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
 
 ## Acceso a la base de datos Postgres desde Superset
 Como se comentó más arriba, las datos se han persistido en una BD `Postgres`. Desde una terminal de `bash` podemos acceder al **container** correspondiente via
@@ -144,7 +142,7 @@ Creamos un dashboard donde vamos agregando distintos gráficos a analizar.
 
 Veamos a continuación unos ejemplos de los gráficos incluidos aquí:
 
-En la Fig.1 vemos que los clientes graduados del Secundario o de la Universidad forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o de los que no se tienen información.
+En la Fig.1 vemos que los clientes graduados del secundario o de la universidad forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o de los que no se tienen información.
 
 ![](./images/nivel-de-educacion-2022-10-31T22-10-41.763Z.jpg)  
 *Fig.1 - Nivel de Educación*
@@ -172,5 +170,11 @@ Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco e
 Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos incluidos. El archivo .zip se encuentra en: 
 `./superset/dashboard_export_20221031T233517.zip`  
 
-Este es el archivo que deberá **importarse** luego desde Superset para poder acceder a la info.  
+Este es el archivo que deberá importarse luego desde Superset para poder acceder a las visualizaciones.
+
+Una vez concluido el análisis se puede terminar la sesión de Docker:
+
+```bash
+docker-compose --project-name wksp down
+```  
 
