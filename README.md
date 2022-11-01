@@ -84,11 +84,13 @@ Accedemos a Superset desde http://localhost:8088/
 
 Desde `Superset` creamos el vínculo a la base de datos Postgres y levantamos la tabla **churn**.  
 
+Usamos las siguientes credenciales:  
+
 Nombre BD: `workshop`  
-USER ID: `workshop`  
+User ID: `workshop`  
 Password: `w0rkzh0p`   
 Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop`  
-Nombre de la tabla: `churn`  
+Nombre tabla: `churn`  
 
 ![](./images/churn_superset.png)  
 
