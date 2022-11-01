@@ -23,13 +23,13 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 El ambiente que usaremos en este TP se encuentra en  
 [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en la máquina local para acompañar los varios pasos a continuación.
 
-Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo, eliminando carpetas y archivos que no se utilizarán aquí.
+Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo, eliminando además carpetas y archivos que no se utilizarán aquí.
 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
 * `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distribuido.
 * `pyspark` donde correremos el script de PySpark `bigdata-workshop-es/python/banking-churn.py` para el proceso de ETFL.
 * `postgres` para persistir la base de datos trabajada en la etapa de ETFL.
-* `superset` para la creación de un dashaboard con el propósito de analizar la data.
+* `superset` para la creación de un dashboard con el propósito de analizar la data.
 
 Para eso adaptamos el archivo `bigdata-workshop-es/docker-compose.yml` para que esto quede reflejado aquí (los containers que no se usan quedan comentados (#).)  
 
@@ -53,6 +53,8 @@ Los contenedores están activos. A continuación veremos como correr el script d
 
 ## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
+
+Importante notar que la idea original era que el mismo script de python accediera al archivo csv en Kaggle y luego se *cacheara* localmente. Pero el link de kaggle no permite llegar directamente via url al archivo .csv desde el código. Por lo tanto, el dataset se salvó localmente y quedó en el repositorio de donde accederá el script. **De todos modos**, se dejó mencionado entre las lineas 42-55 el código que se hubiera utilizado de haberlo podido hacer.  
 
 El dataset en formato csv a utilizar contiene 10,127 registros y 22 columnas respecto al *churn* de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
 Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue, cliente del banco. Las columnas se dividen en dos grandes grupos:
