@@ -20,15 +20,20 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 
 ## Levantar el ambiente
 
-El ambiente con el que trabajaremos en este trabajo práctico se encuentra: 
+El ambiente con el que trabajaremos en este trabajo práctico se encuentra en  
 [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git)
 
-Se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git y modificarla de acuerdo al nuevo objetivo. 
+Se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo.  
+
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
 * `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distibuido de PySpark.
 * `pyspark` donde correremos el script de pyspark bigdata-workshop-es/python/banking-churn.py para el proceso de ETFL.
 * `postgres` donde se persistira la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creacion de un dashaboard con el propósito de analizar la data.
+
+Para eso adaptamos el archivo `bigdata-workshop-es/docker-compose.yml` para que esto quede reflejado aquí (los containers que no se usan quedan comentados (#).)
+
+
 
 Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
 
@@ -36,13 +41,13 @@ Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el
 ## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
 
-El dataset en formato csv ha utilizar contiene 10,127 registros y 22 columnas respecto al churn de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
-Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue cliente del banco. Las columnas se dividen en dos grandes grupos:
+El dataset en formato csv ha utilizar contiene 10,127 registros y 22 columnas respecto al *churn* de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
+Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue, cliente del banco. Las columnas se dividen en dos grandes grupos:
 
 * Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
 * Datos transaccionales o especificos del banco: antigüedad del cliente, tipo de tarjeta de crédito, meses sin actividad, límite de crédito, balance de la cuenta, cantidad y monto de transacciones en el año, variación de la cantidad y el monto de las transacciones en el período Q4-Q1, grado de utilización de la tarjeta de crédito. 
 
-Importante notar que el churn de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.
+Importante notar que el *churn* de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.
 
 ## ETFL
 1. **Extracción de los datos -** Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
@@ -99,7 +104,7 @@ Nombre BD: `workshop`
 User ID: `workshop`  
 Password: `w0rkzh0p`   
 Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop`  
-Nombre tabla: `churn`  
+Nombre de la Tabla: `churn`  
 
 ![](./images/churn_superset.png)  
 
@@ -107,7 +112,7 @@ Creamos un dashboard donde vamos agregando distintos gráficos a analizar.
 
 ![](./images/dashboard.png)  
 
-Veamos unos ejemplos de los gráficos incluidos aquí:
+Veamos a continuación unos ejemplos de los gráficos incluidos aquí:
 
 En la Fig.1 vemos que los clientes con el Secundario o la Universidad completado forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o que no se tiene información.
 
@@ -134,7 +139,7 @@ Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco e
 ![](./images/attrition-por-nivel-de-estudio-2022-10-31T22-10-27.059Z.jpg)  
 *Fig.4 - Tabla Attrition vs Nivel de Estudio*  
 
-Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos includios. El archivo .zip se encuentra en: 
-`./superset/dashboard_export_20221031T233517.zip)`  
+Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos incluidos. El archivo .zip se encuentra en: 
+`./superset/dashboard_export_20221031T233517.zip`  
 
-Este es el archivo que deberá *importarse* luego desde Superset para poder acceder a la info.  
+Este es el archivo que deberá **importarse** luego desde Superset para poder acceder a la info.  
