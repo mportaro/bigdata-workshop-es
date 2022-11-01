@@ -7,7 +7,7 @@ Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 * [Dataset](#Dataset)
 * [Levantar el ambiente](#levantar-el-ambiente)
 * [ETFL](#etfl)
-* [Acceso a la base de datos desde Superset](#acceso-a-la-base-de-datos-desde-superset)
+* [Acceso a la base de datos Postgres desde Superset](#acceso-a-la-base-de-datos-postgres-desde-superset)
 
 
 ## Introducción al proyecto
@@ -89,7 +89,7 @@ Un punto a tener en cuenta para un próximo análisis es que el modelo en este c
 
 4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) lo persistimos en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
 
-## Acceso a la base de datos desde Superset
+## Acceso a la base de datos Postgres desde Superset
 Como se comentó más arriba, las datos se han persistido en una BD en `Postgres`. Desde una terminal de `bash` podemos acceder al **container** correspondiente via
 
 ```bash
