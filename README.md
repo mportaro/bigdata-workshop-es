@@ -27,7 +27,7 @@ Se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttD
 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
 * `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distibuido.
-* `pyspark` donde correremos el script de PySpark bigdata-workshop-es/python/banking-churn.py para el proceso de ETFL.
+* `pyspark` donde correremos el script de PySpark `bigdata-workshop-es/python/banking-churn.py` para el proceso de ETFL.
 * `postgres` para persistir la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creación de un dashaboard con el propósito de analizar la data.
 
