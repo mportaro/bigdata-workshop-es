@@ -4,7 +4,7 @@ Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 
 ## Contenidos
 * [Introducción al proyecto](#Introducción-al-proyecto)
-* [Dataset](#Dataset)
+* [Comprensión del Dataset](#comprensión-del-dataset)
 * [Levantar el ambiente](#levantar-el-ambiente)
 * [ETFL](#etfl)
 * [Acceso a la base de datos Postgres desde Superset](#acceso-a-la-base-de-datos-postgres-desde-superset)
