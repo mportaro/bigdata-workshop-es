@@ -44,7 +44,7 @@ Luego corremos el comando de bash `docker-compose up` para levantar el ambiente 
 Verifiquemos que efectivamente estén levantados mediante el siguiente comando:
 
 ```bash
-/$ docker ps --format '{{.Names}}'
+$ docker ps --format '{{.Names}}'
 ```
 
 ![](./images/containers.png)  
