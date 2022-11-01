@@ -7,8 +7,7 @@ Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 * [Dataset](#Dataset)
 * [Levantar el ambiente](#levantar-el-ambiente)
 * [ETFL](#etfl)
-* [Ver base de datos en Superset](#ver-base-de-datos-en-superset)
-* [Conclusiones](#conclusiones)
+* [Acceso a la base de datos desde Superset](#accceso-a-la-base-de-datos-desde-superset)
 
 
 ## Introducción al proyecto
@@ -117,6 +116,5 @@ Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco e
 
 *Fig.4 - Tabla Attrition vs Nivel de Estudio*
 
-## Conclusiones
 
 
