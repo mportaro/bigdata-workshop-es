@@ -121,7 +121,8 @@ El histograma a continuación deja en claro que hay una gran proporción de solt
 Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco en mayor proporción son los graduados de la universidad, casi un 5%, seguidos por los que tienen estudios secundarios completos. Tener en cuenta que hay un 2.5% de *Unknown*, por lo que aquí habria que indagar un poco más para conseguir esa información.
 
 ![](./images/attrition-por-nivel-de-estudio-2022-10-31T22-10-27.059Z.jpg)  
-*Fig.4 - Tabla Attrition vs Nivel de Estudio*
+*Fig.4 - Tabla Attrition vs Nivel de Estudio*  
 
-
-
+Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos includios. El archivo se encuentra en:  
+`bigdata-workshop-es/superset/dashboard_export_20221031T233517.zip`
+Este es el archivo que debe importarse luego desde Superset para poder acceder a la info.
