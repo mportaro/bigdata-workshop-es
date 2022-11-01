@@ -39,13 +39,15 @@ Luego corremos el comando de bash `docker-compose up` para levantar el ambiente 
 
 ```bash
 /bigdata-workshop-es$ docker-compose --project-name wksp up -d
-```
+```  
+
+Verifiquemos que efectivamente estén levantados mediante el siguiente comando:
 
 ```bash
 /bigdata-workshop-es$ docker ps --format '{{.Names}}'
 ```
 
-![](containers.png)  
+![](./containers.png)  
 
 
 
