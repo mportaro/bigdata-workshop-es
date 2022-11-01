@@ -94,7 +94,10 @@ Nombre de la tabla: `churn`
 
 ![](./images/churn_superset.png)  
 
-Creamos un dashboard donde vamos agregando distintos gráficos a analizar: pie charts, una tabla, un tree-map y un histograma. Veamos unos ejemplos:
+Creamos un dashboard donde vamos agregando distintos gráficos a analizar.  
+![](./images/dashboard.png)  
+
+Veamos unos ejemplos:
 
 En la Fig.1 vemos que los clientes con el Secundario o la Universidad completado forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o que no se tiene información.
 
