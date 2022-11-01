@@ -30,7 +30,7 @@ Como se mencionó en la introducción, vamos a levantar los siguientes container
 * `postgres` donde se persistira la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creacion de un dashaboard con el propósito de analizar la data.
 
-Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio https://github.com/mportaro/bigdata-workshop-es.git arriba mencionado.
+Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
 
 
 ## Comprensión del Dataset
