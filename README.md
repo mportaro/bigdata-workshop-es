@@ -61,7 +61,7 @@ Un punto a tener en cuenta para un próximo análisis es que el modelo en este c
 
 4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) lo persistimos en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
 
-## Ver base de datos en Superset
+## Acceso a la base de datos desde Superset
 Como se comentó más arriba, las datos se han persistido en una BD en `Postgres`. Desde una terminal de `bash` podemos acceder al **container** correspondiente via
 
 ```bash
