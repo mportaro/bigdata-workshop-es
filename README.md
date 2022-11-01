@@ -22,6 +22,9 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 
 
 
+[mportaro's GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git)
+
+
 ## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
 
