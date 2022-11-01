@@ -31,8 +31,8 @@ Como se mencionó en la introducción, vamos a levantar los siguientes container
 * `postgres` para persistir la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creación de un dashaboard con el propósito de analizar la data.
 
-Para eso adaptamos el archivo `bigdata-workshop-es/docker-compose.yml` para que esto quede reflejado aquí (los containers que no se usan quedan comentados (#).)
-
+Para eso adaptamos el archivo `bigdata-workshop-es/docker-compose.yml` para que esto quede reflejado aquí (los containers que no se usan quedan comentados (#).)  
+Luego corremos el comando bash `docker-compose` para levantar el ambiente en modo detachado e iniciar los contenedores arriba mencionados:
 
 ```bash
 /bigdata-workshop-es$ docker-compose --project-name wksp up -d
