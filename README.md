@@ -44,10 +44,10 @@ Luego corremos el comando de bash `docker-compose up` para levantar el ambiente 
 Verifiquemos que efectivamente estén levantados mediante el siguiente comando:
 
 ```bash
-/bigdata-workshop-es$ docker ps --format '{{.Names}}'
+/$ docker ps --format '{{.Names}}'
 ```
 
-![](./containers.png)  
+![](./images/containers.png)  
 
 
 
