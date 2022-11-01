@@ -124,5 +124,7 @@ Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco e
 *Fig.4 - Tabla Attrition vs Nivel de Estudio*  
 
 Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos includios. El archivo se encuentra en:  
-`bigdata-workshop-es/superset/dashboard_export_20221031T233517.zip`
+
+![](./marcos/bigdata-workshop-es/superset/dashboard_export_20221031T233517.zip)
+
 Este es el archivo que debe importarse luego desde Superset para poder acceder a la info.
