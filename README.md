@@ -123,8 +123,6 @@ Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco e
 ![](./images/attrition-por-nivel-de-estudio-2022-10-31T22-10-27.059Z.jpg)  
 *Fig.4 - Tabla Attrition vs Nivel de Estudio*  
 
-Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos includios. El archivo se encuentra en:  
-
-`./superset/dashboard_export_20221031T233517.zip)`  
-
+Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos includios. El archivo .zip se encuentra en: 
+`./superset/dashboard_export_20221031T233517.zip)` 
 Este es el archivo que debe importarse luego desde Superset para poder acceder a la info.
