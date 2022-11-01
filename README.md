@@ -21,7 +21,7 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 ## Levantar el ambiente
 
 El ambiente que usaremos en este TP se encuentra en  
-[mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en la máquina local para acompañar los varios pasos de este TP.
+[mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en la máquina local para acompañar los varios pasos a continuación.
 
 Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo, eliminando carpetas y archivos que no se utilizarán aquí.
 
