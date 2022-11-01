@@ -15,14 +15,22 @@ Para integrar el material que se ha cubierto durante el seminario, en este traba
 
 Los datos trabajados van a ser luego cargados en una base de datos `Postgres` para finalmente ser levantados en `Superset` para su posterior análisis mediante gráficos y dashboards. Para todo esto utilizaremos `Docker` para conteinizar cada aplicación, aprovechando la ventaja de portabilidad que lo hace asi independiente del sistema operativo de quienes lo ejecuten y todo el proceso pueda así correr sin problemas en cualquier plataforma o incluso en Cloud.
 
-Vale la pena notar que la data a procesar es ingestada una única vez, ya que los datos son estáticos. Por lo que no habia una clara ventaja en utilizar Airflow. También se planteó si tenia sentido correr el script de PySpark de manera automática, es decir, crear un proceso que dispare Python que corra el script en su container correspondiente. Pero en una segunda impresión esto no parecía algo muy práctico por ser una tarea trivial al ser una única tarea sin necesidad de orquestación. Quizás sería más eficiente que el script se disparase automáticamente tan pronto se levantara el container.
+Vale la pena notar que la data a procesar es ingestada una única vez, ya que los datos son estáticos. Por lo que no habia una clara ventaja en utilizar Kafka o Airflow. También se planteó si tenia sentido correr el script de PySpark de manera automática desde Airflow, es decir, crear un proceso que dispare Python que corra el script en su container correspondiente. Pero en una segunda impresión esto no parecía algo muy práctico por ser una tarea trivial al ser una única tarea sin necesidad de orquestación. Quizás sería más eficiente que el script se disparase automáticamente tan pronto se levantara el container.
 
 
 ## Levantar el ambiente
 
-
-
+El ambiente con el que trabajaremos en este trabajo práctico se encuentra: 
 [mportaro's GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git)
+
+Se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git y modificarla de acuerdo al nuevo objetivo. 
+Como se mencionó en la introducción, vamos a levantar los siguientes containers:
+* `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distibuido de PySpark.
+* `pyspark` donde correremos el script de pyspark bigdata-workshop-es/python/banking-churn.py para el proceso de ETFL.
+* `postgres` donde se persistira la base de datos trabajada en la etapa de ETFL.
+* `superset` para la creacion de un dashaboard con el propósito de analizar la data.
+
+Para acompañar los siguientes pasos de este trabajo se puede clonar el repositorio [mportaro's GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
 
 
 ## Comprensión del Dataset
