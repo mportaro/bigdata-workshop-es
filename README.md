@@ -121,6 +121,8 @@ SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age", "Gender" 
 ```
 ![](./images/postgres_table_2.png)  
 
+Salimos del container con Ctrl+P y Ctrl+Q  
+
 Accedemos a Superset desde http://localhost:8088/  
 ![](./images/localhost8088.png)
 
