@@ -88,9 +88,9 @@ http://localhost:8088/
 
 Nombre de la base de datos: workshop
 
-USER ID: workshop 
-Password: w0rkzh0p 
-Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop` 
+USER ID: workshop \n 
+Password: w0rkzh0p \n 
+Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop`\n 
 Nombre de la tabla: churn
 
 Creamos un dashboard donde vamos agregando distintos gráficos a analizar: pie charts, una tabla, un tree-map y un histograma. Veamos unos ejemplos:
