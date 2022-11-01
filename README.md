@@ -26,19 +26,27 @@ El ambiente con el que trabajaremos en este trabajo práctico se encuentra en
 Se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo.  
 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
-* `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distibuido de PySpark.
-* `pyspark` donde correremos el script de pyspark bigdata-workshop-es/python/banking-churn.py para el proceso de ETFL.
+* `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distibuido.
+* `pyspark` donde correremos el script de PySpark bigdata-workshop-es/python/banking-churn.py para el proceso de ETFL.
 * `postgres` para persistir la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creación de un dashaboard con el propósito de analizar la data.
 
 Para eso adaptamos el archivo `bigdata-workshop-es/docker-compose.yml` para que esto quede reflejado aquí (los containers que no se usan quedan comentados (#).)  
-Luego corremos el comando bash `docker-compose` para levantar el ambiente en modo detachado e iniciar los contenedores arriba mencionados:
+
+Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
+
+Luego corremos el comando de bash `docker-compose up` para levantar el ambiente en modo detachado e iniciar así los contenedores:
 
 ```bash
 /bigdata-workshop-es$ docker-compose --project-name wksp up -d
 ```
 
-Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
+```bash
+/bigdata-workshop-es$ docker ps --format '{{.Names}}'
+```
+
+![](containers.png)  
+
 
 
 ## Comprensión del Dataset
