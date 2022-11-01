@@ -20,10 +20,10 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 
 ## Levantar el ambiente
 
-El ambiente con el que trabajaremos en este trabajo práctico se encuentra en  
-[mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git)
+El ambiente que usaremos en este trabajo práctico se encuentra en  
+[mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en la máquina local para acompañar los varios pasos de este trabajo.
 
-Se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo.  
+Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo.  
 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
 * `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distibuido.
@@ -33,9 +33,7 @@ Como se mencionó en la introducción, vamos a levantar los siguientes container
 
 Para eso adaptamos el archivo `bigdata-workshop-es/docker-compose.yml` para que esto quede reflejado aquí (los containers que no se usan quedan comentados (#).)  
 
-Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
-
-Luego corremos el comando de bash `docker-compose up` para levantar el ambiente en modo detachado e iniciar así los contenedores:
+Corremos el comando de bash `docker-compose up` para levantar el ambiente en modo detachado e iniciar así los contenedores:
 
 ```bash
 docker-compose --project-name wksp up -d
