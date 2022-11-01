@@ -23,7 +23,7 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 El ambiente que usaremos en este trabajo práctico se encuentra en  
 [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en la máquina local para acompañar los varios pasos de este TP.
 
-Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo.  
+Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo, eliminando carpetas y archivos que no se utilizarán aquí.
 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
 * `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distibuido.
@@ -54,7 +54,7 @@ Los contenedores están activos. A continuación veremos como correr el script d
 ## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
 
-El dataset en formato csv ha utilizar contiene 10,127 registros y 22 columnas respecto al *churn* de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
+El dataset en formato csv a utilizar contiene 10,127 registros y 22 columnas respecto al *churn* de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
 Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue, cliente del banco. Las columnas se dividen en dos grandes grupos:
 
 * Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
@@ -64,12 +64,19 @@ Importante notar que el *churn* de los clientes es de aproximadamente un 16%, po
   
 Vamos a correr ahora el script *banking_churn.py* que se encuentra en la carpeta **python** del contenedor `pyspark` para el proceso de **ETFL**. El dataset *BankChurners.cvs* se encuentra en la carpeta **dataset**.  
 
+Accedemos al container `pyspark` mediante el siguiente comando de bash:
+```bash
+ docker exec -it pyspark bash
+ ```
+ Y nos ubicamos en la carpeta **python\** en el directorio raiz:
+
+
 
 ## ETFL
 1. **Extracción de los datos -** Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
 
 2. **Transformación -** Para la limpieza del dataset realizamos las siguientes operaciones:
-    * Se deja que PySpark infiera el esquema de los datos meiante InferSchema y se corrobora que fueron correctamente casteados.
+    * Se deja que PySpark infiera el esquema de los datos mediante InferSchema y se corrobora que fueron correctamente casteados.
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
     * Vemos la proporción de Nulls y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de featuros **numéricos** completamos los Nulls con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que mas se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya seria un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
     * Se analizan todos las columnas numéricas para ver sus respectivas desviaciones starndards (<0.015) para eliminarlas en caso que así fuera por no agregar valor. Pero no hubo ningún caso.
