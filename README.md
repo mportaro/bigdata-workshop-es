@@ -7,7 +7,7 @@ Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 * [Dataset](#Dataset)
 * [Levantar el ambiente](#levantar-el-ambiente)
 * [ETFL](#etfl)
-* [Acceso a la base de datos desde Superset](#accceso-a-la-base-de-datos-desde-superset)
+* [Acceso a la base de datos desde Superset](#acceso-a-la-base-de-datos-desde-superset)
 
 
 ## Introducción al proyecto
