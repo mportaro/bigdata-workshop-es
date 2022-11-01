@@ -228,9 +228,10 @@ lr = LogisticRegression(labelCol='Attrition_Flag', featuresCol='features')
 lrm = lr.fit(train_data)
 
 # Evaluación del Modelo
-
+print("\n")
+print("----------------------")
 print("MÉTRICAS DE EVALUACIÓN")
-print("---------------------- \n")
+print("----------------------\n")
 
 pred_ds = lrm.transform(test_data)
 
