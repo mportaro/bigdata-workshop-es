@@ -44,7 +44,7 @@ docker-compose --project-name wksp up -d
 Verifiquemos que efectivamente estén levantados mediante el siguiente comando:
 
 ```bash
-docker ps --format '{{.Names}}'
+docker ps --format "table '{{.Names}}'\t'{{.ID}}'\t'{{.Ports}}'"
 ```
 
 ![](./images/containers.png)  
