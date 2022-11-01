@@ -86,8 +86,7 @@ http://localhost:8088/
 ![](./images/localhost8088.png)
 
 
-Nombre de la base de datos: workshop
-
+Nombre BD: `workshop`
 USER ID: `workshop`  
 Password: `w0rkzh0p`   
 Por lo que el SQLALCHEMY URI es `postgresql://workshop:w0rksh0p@postgres/workshop`  
