@@ -62,14 +62,18 @@ Los registros (o filas) corresponden a cada cliente que actualmente es, o en su 
 
 Importante notar que el *churn* de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.  
   
-Vamos a correr ahora el script *banking_churn.py* que se encuentra en la carpeta **python** del contenedor `pyspark` para el proceso de **ETFL**. El dataset *BankChurners.cvs* se encuentra en la carpeta **dataset**.  
+Vamos a correr ahora el script *banking_churn.py* que se encuentra en el contenedor `pyspark` para el proceso de **ETFL**. El dataset *BankChurners.cvs* se encuentra en la carpeta *dataset\*.  
 
 Accedemos al container `pyspark` mediante el siguiente comando de bash:
 ```bash
  docker exec -it pyspark bash
  ```
- Y nos ubicamos en la carpeta **python\** en el directorio raiz:
+ Nos ubicamos en la carpeta *python\* en el directorio raiz y corremos el siguiente comando para que se ejecute el script que va a efectuar el ETFL:
 
+```bash
+python3 banking-churn.py
+```
+![](./images/script.png)  
 
 
 ## ETFL
