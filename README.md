@@ -35,7 +35,7 @@ Para eso adaptamos el archivo `bigdata-workshop-es/docker-compose.yml` para que 
 
 
 ```bash
-docker-compose --project-name wksp up -d
+/bigdata-workshop-es$ docker-compose --project-name wksp up -d
 ```
 
 Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
