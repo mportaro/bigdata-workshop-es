@@ -126,4 +126,4 @@ Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco e
 Y finalmente, exportamos el Dashboard completo con el dataset y todas los gráficos includios. El archivo .zip se encuentra en: 
 `./superset/dashboard_export_20221031T233517.zip)`  
 
-Este es el archivo que debe importarse luego desde Superset para poder acceder a la info.
+Este es el archivo que deberá *importarse* luego desde Superset para poder acceder a la info.  
