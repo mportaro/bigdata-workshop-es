@@ -121,7 +121,7 @@ SELECT "CLIENTNUM","Attrition_Flag", "Education_Level","Customer_Age", "Gender" 
 ```
 ![](./images/postgres_table_2.png)  
 
-Salimos del container con Ctrl+P y Ctrl+Q  
+Salimos del container con Ctrl+P y Ctrl+Q.
 
 Accedemos a Superset desde http://localhost:8088/  
 ![](./images/localhost8088.png)
@@ -142,7 +142,7 @@ Creamos un dashboard donde vamos agregando distintos gráficos a analizar.
 
 Veamos a continuación unos ejemplos de los gráficos incluidos aquí:
 
-En la Fig.1 vemos que los clientes con el Secundario o la Universidad completado forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o que no se tiene información.
+En la Fig.1 vemos que los clientes graduados del Secundario o de la Universidad forman la mitad de los clientes. Hay una gran proporción de clientes sin estudios o de los que no se tienen información.
 
 ![](./images/nivel-de-educacion-2022-10-31T22-10-41.763Z.jpg)  
 *Fig.1 - Nivel de Educación*
@@ -162,7 +162,7 @@ El histograma a continuación deja en claro que hay una gran proporción de solt
 *Fig.3 - Histograma Edad vs Estado Civil*
 
 
-Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco en mayor proporción son los graduados de la universidad, casi un 5%, seguidos por los que tienen estudios secundarios completos. Tener en cuenta que hay un 2.5% de *Unknown*, por lo que aquí habria que indagar un poco más para conseguir esa información.
+Es interesante ver en la tabla de la Fig.4 que los clientes que dejan el banco en mayor proporción son los graduados de la universidad, casi un 5%, seguidos por los que tienen estudios secundarios completos. Tener en cuenta que hay un 2.5% de *Unknown*, por lo que aquí habría que indagar un poco más para conseguir esa información.
 
 ![](./images/attrition-por-nivel-de-estudio-2022-10-31T22-10-27.059Z.jpg)  
 *Fig.4 - Tabla Attrition vs Nivel de Estudio*  
