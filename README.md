@@ -55,6 +55,9 @@ Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya 
 
 Las métricas resultantes para evaluar el desempeño del modelo dan una Precisión del 79.3% y una Cobertura del 64.5% para el Label correspondiente a Attrition. El Accuracy, en cambio, es de 91.4%. Y el evaluador arroja un desepeño del 93.1%.
 
+![](./images/resultado_modelo.png)
+
+
 Un punto a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) es de solo un 16% del total de registros.
 
 4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) lo persistimos en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
