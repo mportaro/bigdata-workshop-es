@@ -38,13 +38,13 @@ Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el
 Luego corremos el comando de bash `docker-compose up` para levantar el ambiente en modo detachado e iniciar así los contenedores:
 
 ```bash
-/bigdata-workshop-es$ docker-compose --project-name wksp up -d
+docker-compose --project-name wksp up -d
 ```  
 
 Verifiquemos que efectivamente estén levantados mediante el siguiente comando:
 
 ```bash
-$ docker ps --format '{{.Names}}'
+docker ps --format '{{.Names}}'
 ```
 
 ![](./images/containers.png)  
