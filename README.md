@@ -21,7 +21,7 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 ## Levantar el ambiente
 
 El ambiente que usaremos en este trabajo práctico se encuentra en  
-[mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en la máquina local para acompañar los varios pasos de este trabajo.
+[mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en la máquina local para acompañar los varios pasos de este TP.
 
 Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo.  
 
@@ -48,6 +48,8 @@ docker ps --format "table '{{.Names}}'\t'{{.ID}}'\t'{{.Ports}}'"
 ![](./images/containers.png)  
 
 
+Los contenedores están activos. A continuación veremos como correr el script de python para el proceso de **ETFL**.
+  
 
 ## Comprensión del Dataset
 El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers?select=BankChurners.csv) disponible en la plataforma [Kaggle](https://www.kaggle.com "Kaggle's Homepage").
@@ -58,7 +60,10 @@ Los registros (o filas) corresponden a cada cliente que actualmente es, o en su 
 * Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
 * Datos transaccionales o especificos del banco: antigüedad del cliente, tipo de tarjeta de crédito, meses sin actividad, límite de crédito, balance de la cuenta, cantidad y monto de transacciones en el año, variación de la cantidad y el monto de las transacciones en el período Q4-Q1, grado de utilización de la tarjeta de crédito. 
 
-Importante notar que el *churn* de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.
+Importante notar que el *churn* de los clientes es de aproximadamente un 16%, por lo que se trabaja con un dataset desbalanceado.  
+  
+Vamos a correr ahora el script *banking_churn.py* que se encuentra en la carpeta **python** del contenedor `pyspark` para el proceso de **ETFL**. El dataset *BankChurners.cvs* se encuentra en la carpeta **dataset**.  
+
 
 ## ETFL
 1. **Extracción de los datos -** Como se mencionó anteriormente, el dataset en formato csv se extrajo de la página de Kaggle. La intención original era que el script de python accediera directamente a la página para su debida extracción cada vez que se ejecutara. Lamentablemente no se encontró la manera de hacer el vínculo directo, por lo que, aunque no es lo ideal, se decidió bajar el archivo a la máquina local para que quede en el repositorio en  *bigdata-workshop-es/dataset/BankChurners.csv*. De todos modos se menciona en el script de Python cuales serían los comandos a utilizar si se hubiera podido hacer el vínculo directo.
