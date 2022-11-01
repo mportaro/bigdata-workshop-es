@@ -21,7 +21,7 @@ Vale la pena notar que la data a procesar es ingestada una única vez, ya que lo
 ## Levantar el ambiente
 
 El ambiente con el que trabajaremos en este trabajo práctico se encuentra: 
-[mportaro's GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git)
+[mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git)
 
 Se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git y modificarla de acuerdo al nuevo objetivo. 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
@@ -30,7 +30,7 @@ Como se mencionó en la introducción, vamos a levantar los siguientes container
 * `postgres` donde se persistira la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creacion de un dashaboard con el propósito de analizar la data.
 
-Para acompañar los siguientes pasos de este trabajo se puede clonar el repositorio [mportaro's GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git) arriba mencionado.
+Para acompañar los siguientes pasos de este trabajo se puede clonar entonces el repositorio https://github.com/mportaro/bigdata-workshop-es.git arriba mencionado.
 
 
 ## Comprensión del Dataset
