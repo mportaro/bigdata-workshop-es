@@ -1,12 +1,12 @@
 version: "3"
 services:
-  docs:
-    container_name: docs
-    image: nginx
-    ports:
-      - "80:80"
-    volumes:
-      - "./nginx/html:/usr/share/nginx/html:ro"
+#  docs:
+#    container_name: docs
+#    image: nginx
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - "./nginx/html:/usr/share/nginx/html:ro"
 
   master:
     container_name: master
