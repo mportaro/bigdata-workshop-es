@@ -4,7 +4,7 @@ Seminario Intensivo de Tópicos Avanzados en Datos Complejos
 
 ## Contenidos
 * [Introducción al proyecto](#Introducción-al-proyecto)
-* [Levantar el ambiente y acceso al script](#levantar-el-ambiente-y-acceso-al-script)
+* [Levantar el ambiente y acceso al script de Python](#levantar-el-ambiente-y-acceso-al-script-de-python)
 * [Comprensión del Dataset](#comprensión-del-dataset)
 * [ETFL](#etfl)
 * [Acceso a la base de datos Postgres desde Superset](#acceso-a-la-base-de-datos-postgres-desde-superset)
@@ -18,7 +18,7 @@ Los datos trabajados van a ser luego cargados en una base de datos `Postgres` pa
 Vale la pena notar que la data a procesar es ingestada una única vez, ya que los datos son estáticos. Por lo que no había una clara necesidad de utilizar Kafka. También se planteó si tenía sentido correr el script de manera automática desde Airflow, es decir, crear un proceso que dispare Python que corra el script en su container correspondiente. Pero en una segunda impresión esto no parecía algo muy práctico por ser una tarea trivial al ser una única tarea sin necesidad de orquestación.  
 
 
-## Levantar el ambiente y acceso al script
+## Levantar el ambiente y acceso al script de Python
 
 El ambiente que usaremos en este TP se encuentra en  
 [mportaro workshop_TP GitHub repository](https://github.com/mportaro/bigdata-workshop-es.git). Este repositorio se puede clonar en el disco local para acompañar los varios pasos a continuación.
