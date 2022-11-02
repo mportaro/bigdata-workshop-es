@@ -26,8 +26,8 @@ El ambiente que usaremos en este TP se encuentra en
 Notar que se quizo aprovechar parte de la estructura ya creada en https://github.com/MuttData/bigdata-workshop-es.git vista en clase y modificarla de acuerdo al nuevo objetivo, eliminando además carpetas y archivos que no se utilizarán aquí.
 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
-* `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distribuido.
-* `pyspark` donde correremos el script de PySpark `banking-churn.py` que se encuentra en https://github.com/mportaro/bigdata-workshop-es/tree/master/python para el ETFL.
+* `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un **ambiente distribuido**.
+* `pyspark` donde correremos el **código de PySpark** `banking-churn.py` que se encuentra en https://github.com/mportaro/bigdata-workshop-es/tree/master/python para el proceso de ETFL.
 * `postgres` para persistir la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creación de un dashboard con el propósito de analizar la data.
 
