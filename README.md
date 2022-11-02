@@ -85,8 +85,11 @@ A continuación veremos que es lo que hace el script de python.
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
     * Vemos la proporción de *Nulls* y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de *features* **numéricos** completamos los *Nulls* con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que más se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya sería un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
     * Se analizan todos las columnas numéricas para ver sus respectivas desviaciones standards (<0.015) para eliminarlas en caso que así fuera por no agregar valor. Pero no hubo ningún caso.
-    * Se grafican mediante la libreria de `matplotlib` todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco *features* con distribución asimétrica, por lo que se decidió aplicar una transformación logarítmica para normalizarlas.
-    * Se agrega una columna de training que luego se usará en el *fitteo* del modelo. La relación es 80% training y 20% testing.
+    * Se grafican mediante la libreria de `matplotlib` todas las variables numéricas para ver si tienen una distribución relativamente normal. El algoritmo de regresión logística a utilizar responde mejor bajo estas condiciones. De este análisis se encontraron cinco *features* con distribución asimétrica, por lo que se decidió aplicar una transformación logarítmica para normalizarlas (ver figura a continuación).
+    * Se agrega una columna de training que luego se usará en el *fitteo* del modelo. La relación es 80% training y 20% testing.  
+
+
+    ![](./images/matplotlib.png)  
 
 3. **Fit -** Para predecir el label *Attrition* (i.e.: *churn*) en este ejercicio se usará un modelo paramétrico de regresión logistica de PySpark, ya que se trata de un problema de clasificación binaria (el cliente va a quedarse o irse). En principio un modelo paramétrico que ajuste bien sin *overfitting* es ideal ya que es más fácil de interpretar. Luego se aplica la función de *OneHotEncoding* a las variables categóricas ya que el modelador tiene que recibir variables continuas para un funcionamiento correcto.
 

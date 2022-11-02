@@ -63,8 +63,8 @@ services:
       - ./code:/app
       - ./dataset:/dataset
 
-  pyspark:
-    container_name: pyspark
+  jupyter:
+    container_name: jupyter
     image: arjones/pyspark:2.4.5
     restart: always
     environment:
