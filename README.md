@@ -98,7 +98,7 @@ Las métricas resultantes para evaluar el desempeño del modelo dan una Precisi�
 ![](./images/resultado_modelo.png)
 
 
-Un punto a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) representa solo un 16% sobre el total de registros.
+Un punto a tener en cuenta para un próximo análisis es que el modelo en este caso no trabaja con *validación* durante la etapa de training. También sería importante compensar el desbalance del dataset ya que la clase minoritaria (clientes con *attrition*) representa solo un 16% sobre el total de registros. Por eso es que *Precisión* y *Cobertura* son tan buenos para los clientes **sin** el flag de Attrition (0) y no tan buenos para los que tienen al flag de Attrition (1).
 
 4. **Load -** Una vez ya limpiados y transformados los datos (pero previo al uso del *OneHotEncoder* arriba descripto) se los persiste en una base de datos `Postgres`. Esto nos va a permitir, entre otras cosas, acceder a este nuevo dataset desde herramientas de visualización, tales como `Superset` para diversos tipos de análisis, como veremos en el apartado siguiente.
 
