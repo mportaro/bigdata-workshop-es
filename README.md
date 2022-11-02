@@ -15,7 +15,7 @@ Para integrar el material que se ha cubierto durante el seminario, en este traba
 
 Los datos trabajados van a ser luego cargados en una base de datos `Postgres` para finalmente ser levantados en `Superset` para su posterior análisis mediante gráficos y dashboards. Para todo esto utilizaremos `Docker` para conteinizar cada aplicación, aprovechando la ventaja de portabilidad que lo hace así independiente del sistema operativo de quienes lo ejecuten y todo el proceso pueda correr sin problemas en cualquier plataforma o incluso en *Cloud*.
 
-Vale la pena notar que la data a procesar es ingestada una única vez, ya que los datos son estáticos. Por lo que no había una clara ventaja en utilizar Kafka o Airflow. También se planteó si tenía sentido correr el script de manera automática desde Airflow, es decir, crear un proceso que dispare Python que corra el script en su container correspondiente. Pero en una segunda impresión esto no parecía algo muy práctico por ser una tarea trivial al ser una única tarea sin necesidad de orquestación.  
+Vale la pena notar que la data a procesar es ingestada una única vez, ya que los datos son estáticos. Por lo que no había una clara necesidad de utilizar Kafka. También se planteó si tenía sentido correr el script de manera automática desde Airflow, es decir, crear un proceso que dispare Python que corra el script en su container correspondiente. Pero en una segunda impresión esto no parecía algo muy práctico por ser una tarea trivial al ser una única tarea sin necesidad de orquestación.  
 
 
 ## Levantar el ambiente
@@ -27,7 +27,7 @@ Notar que se quizo aprovechar parte de la estructura ya creada en https://github
 
 Como se mencionó en la introducción, vamos a levantar los siguientes containers:
 * `master`, `worker1` y `worker2` ya que vamos a trabajar sobre un ambiente distribuido.
-* `pyspark` donde correremos el script de PySpark `bigdata-workshop-es/python/banking-churn.py` para el proceso de ETFL.
+* `pyspark` donde correremos el script de PySpark `banking-churn.py` que se encuentra en https://github.com/mportaro/bigdata-workshop-es/tree/master/python para el ETFL.
 * `postgres` para persistir la base de datos trabajada en la etapa de ETFL.
 * `superset` para la creación de un dashboard con el propósito de analizar la data.
 
