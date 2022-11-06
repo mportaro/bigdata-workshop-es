@@ -57,6 +57,7 @@ El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/
 El dataset en formato csv a utilizar contiene 10,127 registros y 22 columnas respecto al *churn* de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
 Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue, cliente del banco. Las columnas se dividen en dos grandes grupos:
 
+* Attrition (i.e.: churn): clientes que se fueron vs los que siguen siendo clientes del banco (valores 1 y 0, respectivamente).
 * Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
 * Datos transaccionales o específicos del banco: antigüedad del cliente, tipo de tarjeta de crédito, meses sin actividad, límite de crédito, balance de la cuenta, cantidad y monto de transacciones en el año, variación de la cantidad y el monto de las transacciones en el período Q4-Q1, grado de utilización de la tarjeta de crédito. 
 
@@ -82,6 +83,8 @@ A continuación veremos que es lo que hace el script de python.
 
 2. **Transformación -** Para la limpieza del dataset realizamos las siguientes operaciones:
     * Se deja que PySpark infiera el esquema de los datos mediante *InferSchema* y se corrobora que fueron correctamente casteados.
+ ![](./images/inferschema.png)  
+
     * La últimas dos columnas del archivo original se eliminan al no ser de utilidad para el análisis.
     * Vemos la proporción de *Nulls* y si el porcentaje es muy alto (>50%) eliminamos completamente esa columna. No hubo ningún caso. Luego, para el caso de *features* **numéricos** completamos los *Nulls* con el valor de la mediana. Para el caso de las variables **categóricas** los valores faltantes aparecen como *'Unknown'*. Una opción sería completarlos con los valores que más se repiten, pero dada la cantidad no parece una buena idea. Otra solución sería completarlo de manera proporcional a la cantidad de valores categóricos, pero eso ya sería un poco más complejo. Por lo que se decidió dejarlos así y asegurarnos que no estamos agregando ruido para los casos donde los valores ya son conocidos.
     * Se analizan todos las columnas numéricas para ver sus respectivas desviaciones standards (<0.015) para eliminarlas en caso que así fuera por no agregar valor. Pero no hubo ningún caso.
