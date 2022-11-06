@@ -57,7 +57,7 @@ El ejercicio de ETFL se basará en un [dataset](https://www.kaggle.com/datasets/
 El dataset en formato csv a utilizar contiene 10,127 registros y 22 columnas respecto al *churn* de clientes de un banco. El propósito es poder desarrollar un modelo que permita anticiparse a la decisión de un cliente de prescindir de los servicios del banco para irse a la competencia.
 Los registros (o filas) corresponden a cada cliente que actualmente es, o en su momento fue, cliente del banco. Las columnas se dividen en dos grandes grupos:
 
-* Attrition (i.e.: churn): es la variable dependiente. Clientes que se fueron vs los que siguen siendo clientes del banco (valores 1 y 0, respectivamente).
+* Attrition_Flag (i.e.: *churn*): es la variable dependiente. Clientes que se fueron vs los que siguen siendo clientes del banco.
 * Datos demográficos: edad, género, cantidad de dependientes, nivel de educación, estado civil, nivel de ingreso.
 * Datos transaccionales o específicos del banco: antigüedad del cliente, tipo de tarjeta de crédito, meses sin actividad, límite de crédito, balance de la cuenta, cantidad y monto de transacciones en el año, variación de la cantidad y el monto de las transacciones en el período Q4-Q1, grado de utilización de la tarjeta de crédito. 
 
